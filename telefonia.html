@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Marcação</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEzfbFPaW1TZW1DbYk7aXVDYVlDWTVLXVFDYVlDaYUzaXlDdaE7idVjhclbgb1Tgb1Xic1fkeFyJbEO4AAAAEnRSTlMAHDlOZ4bL/+f//6f/0+7/sseHLxJ+AAAA70lEQVR4AWXPR4IEIQwEQakb7+H/j91CMFqXcAss/Yqf17wPk6Zgnb8F85tMiNFHr/z8oPhJWdWlmISCQ+HoIU4JKJwJ2bM9CwaYuGIUJpQBYpgHYXsYIi6pKF+U9rm2qF408iq8jqgWBFc8ZewlakX1P/bSD28df3d2ZM3pJcW0cW7k9+DD5uZSCkRWEEv26YOLvjwOIlaEZqA+3RBRXUDC4No3qjLwWWtNNLB9HERyJZqr79EF5XTJCDK2QtvFcrTRyWwFVsEdXL88BAnxtT5Iq1srXlXX0aaE2rr1JcwquvdTU9N7tUH/4svzoU9ff84W2I/rlSEAAAAASUVORK5CYII=">
+
+    
+<header class="navbar">
+    
+    <!-- Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand" 
+           href="https://rauancostadev.github.io/InfoTratamento/index.html"
+           rel="noopener noreferrer">
+            <img src="https://ligacontraocancer.com.br/wp-content/themes/v01/assets/img/build/liga-contra-o-cancer-footer-red.f7f3067c.png" 
+                 alt="Liga Contra o Câncer" 
+                 title="Liga Contra o Câncer">
+        </a>
+    </div>
+
+    <!-- Título central -->
+    <h1 class="titulo-central">Central de Marcação</h1>
+
+
+    <!-- Botão lateral -->
+<div class="side-menu-button" onclick="toggleSideMenu()">☰ Menu</div>
+
+<!-- Menu lateral -->
+<div id="side-menu" class="side-menu">
+    <a href="index.html">Início</a>
+    <a href="oncologia.html">Oncologia Clínica</a>
+    <a href="quimioterapia.html">Quimioterapia</a>
+    <a href="radioterapia.html">Radioterapia</a>
+    <a href="ultrassonografia.html">Ultrassonografia</a>
+    <a href="anotacoes.html">Respostas Rápidas</a>
+    <a href="telefonia.html">Telefonia</a>
+</div>
+    
+</header>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Telefonia</h1>
+</header>
+
+<div class="container">
+
+    <div class="filtros">
+        <input type="text" id="busca" placeholder="Pesquisar setor ou telefone...">
+        
+        <select id="filtroUnidade">
+            <option value="todos">Todas as Unidades</option>
+            <option value="LIGA">LIGA</option>
+            <option value="HLA">HLA</option>
+            <option value="POL">POL</option>
+            <option value="CECAN">CECAN</option>
+            <option value="HOS">HOS</option>
+        </select>
+    </div>
+
+    <div class="grid" id="listaTelefones">
+
+        <!-- URGÊNCIA -->
+        <div class="card base pol" data-unidade="POL">
+            <h3>Pronto-Socorro Convênio</h3>
+            <p>4009-5667</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Pronto-Socorro SUS</h3>
+            <p>4009-5441</p>
+            <span class="badge">HLA</span>
+        </div>
+
+
+
+
+
+        
+
+
+
+        
+
+        <!-- INTERNAÇÃO -->
+        <div class="card base pol" data-unidade="POL">
+            <h3>Centro Cirúrgico</h3>
+            <p>4009-5613</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Cirurgia</h3>
+            <p>4009-5943</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Cirurgia</h3>
+            <p>4009-5721</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Internação</h3>
+            <p>4009-5739</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Autorização de Cirurgia Convênio</h3>
+            <p>4009-5673</p>
+            <span class="badge">POL</span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <!-- EXAMES -->
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Entrega de Exames</h3>
+            <p>4009-5590</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Entrega de Exames</h3>
+            <p>4009-5684</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Entrega de Exames</h3>
+            <p>4009-5739</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>DNA Center</h3>
+            <p>4009-2595</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Ambulatório</h3>
+            <p>4009-5576</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Telefonia</h3>
+            <p>4009-5501 ou 5401</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Farmacia Central</h3>
+            <p>4009-5564</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Portaria</h3>
+            <p>4009-5521</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Sala de Manipulação</h3>
+            <p>4009-5585</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base hos" data-unidade="HOS">
+            <h3>Recepção</h3>
+            <p>4009-5308 ou 4009-5301</p>
+            <span class="badge">HOS</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Portaria Principal</h3>
+            <p>4009-5444</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Portaria</h3>
+            <p>4009-5626</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Laboratório de Patologia</h3>
+            <p>4009-5686</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Laboratório de Patologia</h3>
+            <p>4009-5491</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Sala da Tomografia</h3>
+            <p>4009-5679</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Ambulatório</h3>
+            <p>4009-5631</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Ginecologia</h3>
+            <p>4009-5719</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Secretária Oncologia/Hematologia Convênio</h3>
+            <p>4009-5560</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Secretária Oncologia/Hematologia SUS</h3>
+            <p>4009-5573</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Recepção Medicina Nuclear</h3>
+            <p>4009-7436</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Recepção Mamografia</h3>
+            <p>4009-5559</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Farmácia Satelite</h3>
+            <p>4009-5570</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Pediatria</h3>
+            <p>4009-5688</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Psicologia</h3>
+            <p>4009-5515</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Fisioterapia</h3>
+            <p>4009-5726 (Central pode agendar)</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Fonoaudiologia</h3>
+            <p>4009-5451</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Nutrição</h3>
+            <p>4009-5589</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Patologia</h3>
+            <p>4009-5588</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Odontologia</h3>
+            <p>4009-7428</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Radioterapia Enfermagem</h3>
+            <p>4009-5545</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Secretária Radioterapia</h3>
+            <p>4009-5575 ou 4009-7433</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Recepção Radioterapia</h3>
+            <p>4009-5522 ou 4009-5525</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Laboratório de Patologia</h3>
+            <p>4009-5491</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Nutrição</h3>
+            <p>4009-5405</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Quimioterapia SUS</h3>
+            <p>8440095583 (Apenas via WhatsApp)</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Quimioterapia Convênio</h3>
+            <p>84988433323 (Apenas via WhatsApp)</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Escola da Oncologia</h3>
+            <p>4009-5567</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Medicina Nuclear</h3>
+            <p>4009-7442 (Apenas via WhatsApp)</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Coordenador do Setor de Imagem</h3>
+            <p>4009-5584</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Secretária do Ambulatório Geral</h3>
+            <p>4009-7438 (Apenas via WhatsApp)</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Triagem Online</h3>
+            <p>4009-5416 (via site)</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>NIR (liga.nir@liga.org.br)</h3>
+            <p>4009-5486 OU 4009-5479</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Central de Guias Convênio</h3>
+            <p>8440095544</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Recepção Ultrassonografia</h3>
+            <p>4009-5563 ou 4009-5542</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Recepção Ultrassonografia SUS</h3>
+            <p>4009-5436</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Recepção Ressonância Magnética</h3>
+            <p>4009-5593</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Sala Ressonância Magnética</h3>
+            <p>4009-5586</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Recepção Endoscopia/Colonoscopia</h3>
+            <p>4009-5903</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Serviço Social</h3>
+            <p>4009-5681</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Serviço Social</h3>
+            <p>4009-5543</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Cuidados Paliativos</h3>
+            <p>4009-5724</p>
+            <span class="badge">HLA</span>
+        </div>
+
+
+
+
+
+
+
+
+        
+        <!-- ADMINISTRATIVO -->
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Financeiro</h3>
+            <p>4009-5632</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base cecan" data-unidade="CECAN">
+            <h3>Ouvidoria</h3>
+            <p>99104-6239</p>
+            <span class="badge">CECAN</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Arquivo</h3>
+            <p>4009-5616</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base hla" data-unidade="HLA">
+            <h3>Arquivo</h3>
+            <p>4009-5440</p>
+            <span class="badge">HLA</span>
+        </div>
+
+        <div class="card base pol" data-unidade="POL">
+            <h3>Engenharia</h3>
+            <p>4009-5630</p>
+            <span class="badge">POL</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Orçamento</h3>
+            <p>99681-8500</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Faturamento</h3>
+            <p>4009-5671</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Humanização</h3>
+            <p>4009-7408 ou 4009-5579</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Doações</h3>
+            <p>4009-5578</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+        <div class="card base liga" data-unidade="LIGA">
+            <h3>Clinica BIOS</h3>
+            <p>3231-1010</p>
+            <span class="badge">LIGA</span>
+        </div>
+
+
+    </div>
+
+
+    
+</div>
+
+<footer>
+    Liga Contra o Cancer • Central de Marcação
+</footer>
+
+<script>
+
+const buscaInput = document.getElementById("busca");
+const filtroUnidade = document.getElementById("filtroUnidade");
+const cards = document.querySelectorAll(".card");
+
+function filtrar() {
+    const textoBusca = buscaInput.value.toLowerCase();
+    const unidadeSelecionada = filtroUnidade.value;
+
+    cards.forEach(card => {
+        const textoCard = card.textContent.toLowerCase();
+        const unidadeCard = card.getAttribute("data-unidade");
+
+        const correspondeBusca = textoCard.includes(textoBusca);
+        const correspondeUnidade = unidadeSelecionada === "todos" || unidadeSelecionada === unidadeCard;
+
+        if (correspondeBusca && correspondeUnidade) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+buscaInput.addEventListener("keyup", filtrar);
+filtroUnidade.addEventListener("change", filtrar);
+
+</script>
+
+<script>
+function toggleSideMenu() {
+    const menu = document.getElementById('side-menu');
+    if(menu.style.right === "0px") {
+        menu.style.right = "-250px"; // fecha
+    } else {
+        menu.style.right = "0px"; // abre
+    }
+}
+</script>
+
+
+
+</body>
+</html>

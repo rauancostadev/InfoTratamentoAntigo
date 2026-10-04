@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Marcação</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEzfbFPaW1TZW1DbYk7aXVDYVlDWTVLXVFDYVlDaYUzaXlDdaE7idVjhclbgb1Tgb1Xic1fkeFyJbEO4AAAAEnRSTlMAHDlOZ4bL/+f//6f/0+7/sseHLxJ+AAAA70lEQVR4AWXPR4IEIQwEQakb7+H/j91CMFqXcAss/Yqf17wPk6Zgnb8F85tMiNFHr/z8oPhJWdWlmISCQ+HoIU4JKJwJ2bM9CwaYuGIUJpQBYpgHYXsYIi6pKF+U9rm2qF408iq8jqgWBFc8ZewlakX1P/bSD28df3d2ZM3pJcW0cW7k9+DD5uZSCkRWEEv26YOLvjwOIlaEZqA+3RBRXUDC4No3qjLwWWtNNLB9HERyJZqr79EF5XTJCDK2QtvFcrTRyWwFVsEdXL88BAnxtT5Iq1srXlXX0aaE2rr1JcwquvdTU9N7tUH/4svzoU9ff84W2I/rlSEAAAAASUVORK5CYII=">
+
+    
+<header class="navbar">
+    
+    <!-- Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand" 
+           href="https://rauancostadev.github.io/InfoTratamento/index.html"
+           rel="noopener noreferrer">
+            <img src="https://ligacontraocancer.com.br/wp-content/themes/v01/assets/img/build/liga-contra-o-cancer-footer-red.f7f3067c.png" 
+                 alt="Liga Contra o Câncer" 
+                 title="Liga Contra o Câncer">
+        </a>
+    </div>
+
+    <!-- Título central -->
+    <h1 class="titulo-central">Central de Marcação</h1>
+
+
+    <!-- Botão lateral -->
+<div class="side-menu-button" onclick="toggleSideMenu()">☰ Menu</div>
+
+<!-- Menu lateral -->
+<div id="side-menu" class="side-menu">
+    <a href="index.html">Início</a>
+    <a href="oncologia.html">Oncologia Clínica</a>
+    <a href="quimioterapia.html">Quimioterapia</a>
+    <a href="radioterapia.html">Radioterapia</a>
+    <a href="ultrassonografia.html">Ultrassonografia</a>
+    <a href="anotacoes.html">Respostas Rápidas</a>
+    <a href="telefonia.html">Telefonia</a>
+</div>
+    
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<header>
+<h1>Quimioterapia</h1>
+</header>
+
+<div class="container">
+    
+    <div class="search-wrapper">
+        <input type="text" id="search" class="search" placeholder="Buscar medicamento ou protocolo...">
+    </div>
+
+    <h1>
+
+    </h1>
+
+    <div id="mainPage">
+        <div class="grid" id="protocolGrid"></div>
+    </div>
+</div>
+
+<script>
+// Dados extraídos do documento fornecido
+const quimioData = {
+    "Quimioterápicos Orais": [
+        { nome: "ABIRATERONA", intervalo: "30 ou 60 dias", obs: "Conforme evolução médica" },
+        { nome: "CAPECITABINA (XELODA)", intervalo: "21 dias", obs: "" },
+        { nome: "CICLOFOSFAMIDA", intervalo: "30 dias", obs: "" },
+        { nome: "CLORAMBUCILA", intervalo: "30 dias", obs: "" },
+        { nome: "DASATINIBE (SPRYCEL)", intervalo: "30, 60 ou 90 dias", obs: "Conforme evolução médica" },
+        { nome: "ETOPOSIDE D1 - D14", intervalo: "21 dias", obs: "" },
+        { nome: "ETOPOSIDE D1 - D21", intervalo: "30 dias", obs: "" },
+        { nome: "GEFITINIBE (IRESSA)", intervalo: "30 ou 60 dias", obs: "Conforme evolução médica" },
+        { nome: "HIDROXIUREIA (HYDREA)", intervalo: "30, 60 ou 90 dias", obs: "Conforme evolução médica" },
+        { nome: "IMATINIBE (GLIVEC)", intervalo: "30, 60 ou 90 dias", obs: "Conforme evolução médica" },
+        { nome: "MELFALANO", intervalo: "30 dias", obs: "" },
+        { nome: "MERCAPTOPURINA + TRETINOÍNA (ATRA) + MTX", intervalo: "90 dias", obs: "Conforme evolução médica" },
+        { nome: "NILOTINIBE (TASIGNA)", intervalo: "30, 60 ou 90 dias", obs: "Conforme evolução médica" },
+        { nome: "PALBOCICLIBE (IBRANCE)", intervalo: "30 dias", obs: "" },
+        { nome: "SUNITINIBE (SUTENT)", intervalo: "21 ou 42 dias", obs: "Conforme evolução médica" },
+        { nome: "TEMOZOLAMIDA (TEMODAL) - CONCOMITANTE RT", intervalo: "15, 30, 45 ou 60 dias", obs: "Conforme evolução médica" },
+        { nome: "TEMOZOLAMIDA (TEMODAL) - MANUTENÇÃO D1-D5", intervalo: "28 dias", obs: "" },
+        { nome: "VINORELBINA (NAVELBINE)", intervalo: "15, 21 ou 28 dias", obs: "Conforme evolução médica" }
+    ],
+    "SUS (Injetáveis)": [
+        { nome: "ABVD - Hemato", intervalo: "15 dias", obs: "" },
+        { nome: "AC", intervalo: "21 dias", obs: "" },
+        { nome: "AC DOSE DENSA", intervalo: "15 dias", obs: "" },
+        { nome: "AC ZOLEDRONICO (ZOMETA)", intervalo: "30 dias", obs: "SUS só cobre 1 ao mês" },
+        { nome: "AZACITIDINA (VIDAZA)", intervalo: "D1-D7 a cada 28 dias", obs: "Via Subcutânea (SC)" },
+        { nome: "BEP", intervalo: "D1-D5, D8 e D15", obs: "" },
+        { nome: "BRENTUXIMABE (ADCETRIZ)", intervalo: "21 dias", obs: "Judicializado (checar farmácia)" },
+        { nome: "CARBOPLATINA ISOLADA", intervalo: "21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "CARBO + ETOPOSÍDEO", intervalo: "D1-D3 a cada 21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "CARBO + GENCITABINA", intervalo: "D1 e D8 a cada 21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "CARBO + PACLITAXEL 175", intervalo: "21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "CARBO + PACLITAXEL SEMANAL", intervalo: "Semanal", obs: "Poltronas 05 a 34" },
+        { nome: "CARBO + PEMETREXEDE", intervalo: "21 dias", obs: "Agendar apenas Terças ou Quartas" },
+        { nome: "CICLOFOSFAMIDA", intervalo: "21 dias", obs: "" },
+        { nome: "CISPLATINA 100", intervalo: "21 dias", obs: "" },
+        { nome: "CISPLATINA SEMANAL", intervalo: "Semanal (6 semanas)", obs: "" },
+        { nome: "CISPLATINA + DOCETAXEL", intervalo: "D1 e D8 a cada 21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "CISPLATINA + DOXORRUBICINA", intervalo: "D1-D3 a cada 21 dias", obs: "" },
+        { nome: "CISPLATINA + ETOPOSIDEO", intervalo: "D1 e D8 a cada 21 dias", obs: "" },
+        { nome: "CISPLATINA + GENCITABINA", intervalo: "D1 e D8 a cada 21 dias", obs: "" },
+        { nome: "CISPLATINA + VINORELBINA", intervalo: "D1 e D8 a cada 21 dias", obs: "" },
+        { nome: "CMF", intervalo: "21 ou 28 dias", obs: "Checar evolução" },
+        { nome: "DACARBAZINA", intervalo: "21 dias", obs: "" },
+        { nome: "DESSENSIBILIZAÇÃO", intervalo: "Depende do protocolo", obs: "8h de infusão - Agendar em LEITO - Poltronas 05 a 34" },
+        { nome: "DOCETAXEL 50 DENSA", intervalo: "15 ou 21 dias", obs: "Poltronas 05 a 34 (Checar evolução)" },
+        { nome: "DOCETAXEL 75", intervalo: "21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "DOCETAXEL + PREDNISONA", intervalo: "21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "DOXORRUBICINA", intervalo: "28 dias", obs: "" },
+        { nome: "DOXORRUBICINA + IFOSFAMIDA + MESNA", intervalo: "D1-D5 cada 21 dias", obs: "" },
+        { nome: "DOXORRUBICINA LIPOSSOMAL", intervalo: "28 dias", obs: "" },
+        { nome: "ELIGARD (7.5 / 22.5)", intervalo: "30 ou 90 dias", obs: "Via SC" },
+        { nome: "EMA-CO", intervalo: "D1, D2 e D8, pausa 1 semana", obs: "" },
+        { nome: "ERITROPOETINA (EPREX)", intervalo: "30 dias", obs: "Via SC" },
+        { nome: "ETOPOSIDEO ISOLADO", intervalo: "21 dias", obs: "" },
+        { nome: "ETOPOSIDEO (D1, D2 e D3)", intervalo: "21 dias", obs: "" },
+        { nome: "FAC", intervalo: "21 dias", obs: "" },
+        { nome: "FLOT", intervalo: "15 dias", obs: "Poltronas 05 a 19" },
+        { nome: "FLOX", intervalo: "6 semanas (pausa 2)", obs: "Poltronas 05 a 19" },
+        { nome: "FOLFIRI", intervalo: "15 dias", obs: "" },
+        { nome: "FOLFOX", intervalo: "15 dias", obs: "Poltronas 05 a 19" },
+        { nome: "FOLFIRINOX", intervalo: "15 dias", obs: "Poltronas 05 a 19" },
+        { nome: "5-FU + LEOCOVORIN", intervalo: "5 dias a cada 21 ou 28 dias", obs: "Checar evolução" },
+        { nome: "GENCITABINA ISOLADA", intervalo: "21 dias", obs: "" },
+        { nome: "GENCITABINA INTRAVESICAL", intervalo: "28 dias (1 ao mês)", obs: "Agendar em LEITO" },
+        { nome: "IFOSFAMIDA", intervalo: "21 dias", obs: "" },
+        { nome: "LANREOTIDA", intervalo: "28 dias (1 ao mês)", obs: "Via SC" },
+        { nome: "MAYO CLINIC", intervalo: "D1-D5 cada 28 dias", obs: "" },
+        { nome: "METOTREXATO IV", intervalo: "21 dias", obs: "Agendar LEITO (8h ou 14h)" },
+        { nome: "METOTREXATO IM", intervalo: "Checar prescrição", obs: "Prioridade" },
+        { nome: "MITOXANTRONA + PREDNISONA", intervalo: "21 dias", obs: "" },
+        { nome: "NIVOLIMABE", intervalo: "21 dias", obs: "" },
+        { nome: "ONCO BCG", intervalo: "Semanal (Indução) / 30 dias (Manutenção)", obs: "" },
+        { nome: "OXALIPLATINA (XELOX)", intervalo: "21 dias", obs: "Poltronas 05 a 19" },
+        { nome: "PACLITAXEL 175", intervalo: "21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "PEMETREXEDE (ALIMTA)", intervalo: "21 dias", obs: "Agendar apenas Terças ou Quartas" },
+        { nome: "TC", intervalo: "21 dias", obs: "Poltronas 05 a 34" },
+        { nome: "TCH", intervalo: "21 dias", obs: "Confirmar Trastuzumabe UNICAT / Poltronas 05 a 34" },
+        { nome: "TH / TH SEMANAL", intervalo: "21 dias ou Semanal", obs: "Confirmar Trastuzumabe UNICAT" },
+        { nome: "TIP", intervalo: "D1-D3 cada 21 dias", obs: "D1: 8h de infusão / Poltronas 05 a 34" },
+        { nome: "TOPOTECANO", intervalo: "21 ou 28 dias", obs: "Checar evolução" },
+        { nome: "TRASTUZUMABE", intervalo: "21 dias", obs: "Confirmar na lista UNICAT" },
+        { nome: "TRASTUZUMABE-ENTANSINA (KADCYLA)", intervalo: "21 dias", obs: "Judicializado (checar farmácia)" },
+        { nome: "TRASTUZUMABE-DERUXTECANO (ENHERTU)", intervalo: "21 dias", obs: "Agendar apenas Quintas ou Sextas" },
+        { nome: "TRASTUZUMABE + PERTUZUMABE", intervalo: "21 dias", obs: "Confirmar lista UNICAT" },
+        { nome: "VAC", intervalo: "21 ou 28 dias", obs: "Checar evolução" },
+        { nome: "VINORELBINA", intervalo: "D1 e D8 a cada 21 dias", obs: "" },
+        { nome: "XELIRI", intervalo: "21 dias", obs: "" },
+        { nome: "ZOLADEX (3.6 / 10.8)", intervalo: "30 ou 90 dias", obs: "Via SC" }
+    ],
+    "Hematologia": [
+        { nome: "BORTEZOMIBE - Hemato", intervalo: "D1, D8, D15, D22", obs: "Pausa 1 semana - Via SC" },
+        { nome: "CHOEP - Hemato", intervalo: "D1-D3 cada 21 dias", obs: "" },
+        { nome: "CHOP / R-CHOP - Hemato", intervalo: "21 dias", obs: "Confirmar Rituximabe na UNICAT" },
+        { nome: "DARATUMUMABE - Hemato", intervalo: "21 dias ou SC", obs: "Judicializado (Consultar Farmácia)" },
+        { nome: "DHAP", intervalo: "D1 (qualquer), D2 (13h), D3 (7h)", obs: "" },
+        { nome: "GDP / GEMOX / R-GEMOX - Hemato", intervalo: "D1 e D8 a cada 21 dias", obs: "" },
+        { nome: "ICE", intervalo: "D1-D3 a cada 21 dias", obs: "" },
+        { nome: "PAMIDRONATO - Hemato", intervalo: "28 dias", obs: "" },
+        { nome: "RITUXIMABE", intervalo: "21 dias", obs: "Confirmar na lista UNICAT" },
+        { nome: "R-mini-CHOP - Hemato", intervalo: "21 dias", obs: "" },
+        { nome: "VCD / VTD-Hemato", intervalo: "D1, D8, D15, D22", obs: "Pausa 1 semana - SC/IV" }
+    ]
+};
+
+const grid = document.getElementById("protocolGrid");
+
+function renderProtocols() {
+    grid.innerHTML = "";
+    Object.entries(quimioData).forEach(([categoria, itens]) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        
+        const title = document.createElement("h2");
+        title.textContent = categoria;
+        card.appendChild(title);
+
+        const ul = document.createElement("ul");
+        itens.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <strong>${item.nome}</strong>
+                <span class="intervalo">⏱️ Retorno: ${item.intervalo}</span>
+                ${item.obs ? `<span class="badge-obs">⚠️ ${item.obs}</span>` : ''}
+            `;
+            ul.appendChild(li);
+        });
+        
+        card.appendChild(ul);
+        grid.appendChild(card);
+    });
+}
+
+// Lógica de Busca
+document.getElementById("search").addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+    document.querySelectorAll(".card li").forEach(li => {
+        const text = li.textContent.toLowerCase();
+        li.style.display = text.includes(value) ? "block" : "none";
+    });
+    
+    // Esconde cards vazios após a busca
+    document.querySelectorAll(".card").forEach(card => {
+        const hasVisibleItems = Array.from(card.querySelectorAll("li")).some(li => li.style.display !== "none");
+        card.style.display = hasVisibleItems ? "block" : "none";
+    });
+});
+
+renderProtocols();
+</script>
+
+<script>
+function toggleSideMenu() {
+    const menu = document.getElementById('side-menu');
+    if(menu.style.right === "0px") {
+        menu.style.right = "-250px"; // fecha
+    } else {
+        menu.style.right = "0px"; // abre
+    }
+}
+</script>
+
+<footer>
+    Liga Contra o Cancer • Central de Marcação
+</footer>   
+
+</body>
+</html>

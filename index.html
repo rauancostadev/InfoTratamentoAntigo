@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Marcação</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEzfbFPaW1TZW1DbYk7aXVDYVlDWTVLXVFDYVlDaYUzaXlDdaE7idVjhclbgb1Tgb1Xic1fkeFyJbEO4AAAAEnRSTlMAHDlOZ4bL/+f//6f/0+7/sseHLxJ+AAAA70lEQVR4AWXPR4IEIQwEQakb7+H/j91CMFqXcAss/Yqf17wPk6Zgnb8F85tMiNFHr/z8oPhJWdWlmISCQ+HoIU4JKJwJ2bM9CwaYuGIUJpQBYpgHYXsYIi6pKF+U9rm2qF408iq8jqgWBFc8ZewlakX1P/bSD28df3d2ZM3pJcW0cW7k9+DD5uZSCkRWEEv26YOLvjwOIlaEZqA+3RBRXUDC4No3qjLwWWtNNLB9HERyJZqr79EF5XTJCDK2QtvFcrTRyWwFVsEdXL88BAnxtT5Iq1srXlXX0aaE2rr1JcwquvdTU9N7tUH/4svzoU9ff84W2I/rlSEAAAAASUVORK5CYII=">
+    
+<header class="navbar">
+    
+    <!-- Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand" 
+           href="https://rauancostadev.github.io/InfoTratamento/index.html"
+           rel="noopener noreferrer">
+            <img src="https://ligacontraocancer.com.br/wp-content/themes/v01/assets/img/build/liga-contra-o-cancer-footer-red.f7f3067c.png" 
+                 alt="Liga Contra o Câncer" 
+                 title="Liga Contra o Câncer">
+        </a>
+    </div>
+
+    <!-- Título central -->
+    <h1 class="titulo-central">Central de Marcação</h1>
+
+
+    <!-- Botão lateral -->
+<div class="side-menu-button" onclick="toggleSideMenu()">☰ Menu</div>
+
+<!-- Menu lateral -->
+<div id="side-menu" class="side-menu">
+    <a href="index.html">Início</a>
+    <a href="oncologia.html">Oncologia Clínica</a>
+    <a href="quimioterapia.html">Quimioterapia</a>
+    <a href="radioterapia.html">Radioterapia</a>
+    <a href="ultrassonografia.html">Ultrassonografia</a>
+    <a href="anotacoes.html">Respostas Rápidas</a>
+    <a href="telefonia.html">Telefonia</a>
+</div>
+
+</header>
+
+</head>
+<body>
+
+<header>
+
+<h1>Sistema Interno</h1>
+
+</header>
+
+<section class="hero">
+
+<p>
+
+</p>
+
+</section>
+
+
+<section class="atalhos">
+
+<a href="oncologia.html" class="atalho-card"> 
+♋ Divisão de Tumores
+</a>
+
+<a href="radioterapia.html" class="atalho-card">
+📅 Agenda Radioterapia
+</a>
+
+<a href="telefonia.html" class="atalho-card">
+☎️ Telefonia
+</a>
+
+<a href="anotacoes.html" class="atalho-card"> 
+📋 Respostas Rápidas
+</a>
+
+<a href="ultrassonografia.html" class="atalho-card"> 
+📺 Ultrassonografia
+</a>
+
+<a href="quimioterapia.html" class="atalho-card"> 
+💉 Quimioterapia
+</a>
+
+</section>
+
+<script>
+function toggleSideMenu() {
+    const menu = document.getElementById('side-menu');
+    if(menu.style.right === "0px") {
+        menu.style.right = "-250px"; // fecha
+    } else {
+        menu.style.right = "0px"; // abre
+    }
+}
+</script>
+
+<footer>
+    Liga Contra o Cancer • Central de Marcação
+</footer>   
+
+</body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

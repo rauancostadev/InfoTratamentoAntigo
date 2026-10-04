@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Marcação</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEzfbFPaW1TZW1DbYk7aXVDYVlDWTVLXVFDYVlDaYUzaXlDdaE7idVjhclbgb1Tgb1Xic1fkeFyJbEO4AAAAEnRSTlMAHDlOZ4bL/+f//6f/0+7/sseHLxJ+AAAA70lEQVR4AWXPR4IEIQwEQakb7+H/j91CMFqXcAss/Yqf17wPk6Zgnb8F85tMiNFHr/z8oPhJWdWlmISCQ+HoIU4JKJwJ2bM9CwaYuGIUJpQBYpgHYXsYIi6pKF+U9rm2qF408iq8jqgWBFc8ZewlakX1P/bSD28df3d2ZM3pJcW0cW7k9+DD5uZSCkRWEEv26YOLvjwOIlaEZqA+3RBRXUDC4No3qjLwWWtNNLB9HERyJZqr79EF5XTJCDK2QtvFcrTRyWwFVsEdXL88BAnxtT5Iq1srXlXX0aaE2rr1JcwquvdTU9N7tUH/4svzoU9ff84W2I/rlSEAAAAASUVORK5CYII=">
+
+    
+<header class="navbar">
+    
+    <!-- Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand" 
+           href="https://rauancostadev.github.io/InfoTratamento/index.html"
+           rel="noopener noreferrer">
+            <img src="https://ligacontraocancer.com.br/wp-content/themes/v01/assets/img/build/liga-contra-o-cancer-footer-red.f7f3067c.png" 
+                 alt="Liga Contra o Câncer" 
+                 title="Liga Contra o Câncer">
+        </a>
+    </div>
+
+    <!-- Título central -->
+    <h1 class="titulo-central">Central de Marcação</h1>
+
+
+    <!-- Botão lateral -->
+<div class="side-menu-button" onclick="toggleSideMenu()">☰ Menu</div>
+
+<!-- Menu lateral -->
+<div id="side-menu" class="side-menu">
+    <a href="index.html">Início</a>
+    <a href="oncologia.html">Oncologia Clínica</a>
+    <a href="quimioterapia.html">Quimioterapia</a>
+    <a href="radioterapia.html">Radioterapia</a>
+    <a href="ultrassonografia.html">Ultrassonografia</a>
+    <a href="anotacoes.html">Respostas Rápidas</a>
+    <a href="telefonia.html">Telefonia</a>
+</div>
+    
+</header>
+
+</head>
+<body>
+
+<header>
+    <h1>Radioterapia</h1>
+</header>
+
+<section class="radioterapia-section">
+
+<div class="search-wrapper">
+  <input type="text" id="busca-medico" class="search" placeholder="Buscar médico..." />
+</div>
+<h1></h1>
+
+  <div class="filtro-container">
+    <button class="filtro-btn active" data-filter="all">Todos</button>
+    <button class="filtro-btn" data-filter="sus">SUS</button>
+    <button class="filtro-btn" data-filter="convenio">Convênio</button>
+    <button class="filtro-btn" data-filter="residentes">Residentes</button>
+  </div>
+
+  <div class="atendimento-grid">
+
+    <!-- SUS -->
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Leonardo</h3>
+      <p class="medico-turno">
+        Terça-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Edilmar</h3>
+      <p class="medico-turno">
+        Quinta-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Andrea</h3>
+      <p class="medico-turno">
+        Terça-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+      <p class="medico-turno">
+        Quarta-feira (Manhã)
+        <span class="medico-info">4 novos | 4 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Carlota</h3>
+      <p class="medico-turno">
+        Quinta-feira (Tarde)
+        <span class="medico-info">4 novos | 5 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Denize</h3>
+      <p class="medico-turno">
+        Segunda-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Igor</h3>
+      <p class="medico-turno">
+        Sexta-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Wellinton</h3>
+      <p class="medico-turno">
+        Sexta-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Juliana</h3>
+      <p class="medico-turno">
+        Quinta-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <div class="medico-card azul" data-category="sus">
+      <span class="categoria-badge sus">SUS</span>
+      <h3 class="medico-nome">👨‍⚕️ Guilherme</h3>
+      <p class="medico-turno">
+        Terça-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+    <!-- CONVÊNIO -->
+    <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Leonardo</h3>
+      <p class="medico-turno">
+        Terça-feira (Tarde)
+        <span class="medico-info">5 novos | 5 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Edilmar</h3>
+      <p class="medico-turno">
+        Terça-feira (Tarde)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Andrea</h3>
+      <p class="medico-turno">
+        Quinta-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Carlota</h3>
+      <p class="medico-turno">
+        Sexta-feira (Tarde)
+        <span class="medico-info">4 novos | 4 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Denize</h3>
+      <p class="medico-turno">
+        Terça-feira (Tarde)
+        <span class="medico-info">5 novos | 5 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Igor</h3>
+      <p class="medico-turno">
+        Segunda-feira (Tarde)
+        <span class="medico-info">5 novos | 5 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Wellinton</h3>
+      <p class="medico-turno">
+        Sexta-feira (Tarde)
+        <span class="medico-info">5 novos | 5 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Juliana</h3>
+      <p class="medico-turno">
+        Segunda-feira (Manhã)
+        <span class="medico-info">5 novos | 6 controles</span>
+      </p>
+      <p class="medico-turno">
+        Quinta-feira (Tarde)
+        <span class="medico-info">4 novos</span>
+      </p>
+    </div>
+
+        <div class="medico-card laranja" data-category="convenio">
+      <span class="categoria-badge convenio">Convênio</span>
+      <h3 class="medico-nome">👨‍⚕️ Guilherme</h3>
+      <p class="medico-turno">
+        Quarta-feira (Manhã)
+        <span class="medico-info">3 novos | 4 controles</span>
+      </p>
+    </div>
+
+    <!-- RESIDENTES -->
+    <div class="medico-card roxo" data-category="residentes">
+      <span class="categoria-badge residentes">Residente</span>
+      <h3 class="medico-nome">👨‍⚕️ Vivian</h3>
+      <p class="medico-turno">
+        Sexta-feira (Manhã)
+        <span class="medico-info">4 novos | 4 controles</span>
+      <p class="medico-turno">
+        Quinta-feira (Tarde)
+        <span class="medico-info">4 novos | 3 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card  roxo" data-category="residentes">
+      <span class="categoria-badge residentes">Residente</span>
+      <h3 class="medico-nome">👨‍⚕️ Danielle</h3>
+      <p class="medico-turno">
+        Segunda-feira (Tarde)
+        <span class="medico-info">4 novos | 3 controles</span>
+      <p class="medico-turno">
+        Quinta-feira (Manhã)
+        <span class="medico-info">4 novos | 4 controles</span>
+      </p>
+    </div>
+
+        <div class="medico-card  roxo" data-category="residentes">
+      <span class="categoria-badge residentes">Residente</span>
+      <h3 class="medico-nome">👨‍⚕️ Anelize</h3>
+      <p class="medico-turno">
+        Segunda-feira (Manhã)
+        <span class="medico-info">4 novos | 6 controles</span>
+      <p class="medico-turno">
+        Sexta-feira (Manhã)
+        <span class="medico-info">4 novos | 4 controles</span>
+      </p>
+      <p class="medico-turno">
+        Sexta-feira (Tarde)
+        <span class="medico-info">4 novos | 3 controles</span>
+      </p>      
+    </div>
+
+              <div class="medico-card  roxo" data-category="residentes">
+      <span class="categoria-badge residentes">Residente</span>
+      <h3 class="medico-nome">👨‍⚕️ Alice</h3>
+      <p class="medico-turno">
+        Segunda-feira (Manhã)
+        <span class="medico-info">4 novos | 6 controles</span>
+      <p class="medico-turno">
+        Quinta-feira (Manhã)
+        <span class="medico-info">4 novos | 6 controles</span>
+      <p class="medico-turno">
+        Sexta-feira (Tarde)
+        <span class="medico-info">4 novos | 3 controles</span>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+    
+<script>
+  const botoes = document.querySelectorAll(".filtro-btn");
+  const cards = document.querySelectorAll(".medico-card");
+  const buscaInput = document.getElementById("busca-medico");
+
+  function filtrarCards() {
+    const filtro = document.querySelector(".filtro-btn.active").getAttribute("data-filter");
+    const termoBusca = buscaInput.value.toLowerCase();
+
+    cards.forEach(card => {
+      const nome = card.querySelector(".medico-nome").textContent.toLowerCase();
+      const correspondeFiltro = filtro === "all" || card.getAttribute("data-category") === filtro;
+      const correspondeBusca = nome.includes(termoBusca);
+
+      if (correspondeFiltro && correspondeBusca) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  }
+
+  // Filtro por categoria
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      botoes.forEach(btn => btn.classList.remove("active"));
+      botao.classList.add("active");
+      filtrarCards();
+    });
+  });
+
+  // Filtro por busca
+  buscaInput.addEventListener("input", () => {
+    filtrarCards();
+    
+  });
+
+</script>
+
+<script>
+function toggleSideMenu() {
+    const menu = document.getElementById('side-menu');
+    if(menu.style.right === "0px") {
+        menu.style.right = "-250px"; // fecha
+    } else {
+        menu.style.right = "0px"; // abre
+    }
+}
+</script>
+
+
+<footer>
+    Liga Contra o Cancer • Central de Marcação
+</footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+

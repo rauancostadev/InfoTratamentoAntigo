@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Marcação</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEzfbFPaW1TZW1DbYk7aXVDYVlDWTVLXVFDYVlDaYUzaXlDdaE7idVjhclbgb1Tgb1Xic1fkeFyJbEO4AAAAEnRSTlMAHDlOZ4bL/+f//6f/0+7/sseHLxJ+AAAA70lEQVR4AWXPR4IEIQwEQakb7+H/j91CMFqXcAss/Yqf17wPk6Zgnb8F85tMiNFHr/z8oPhJWdWlmISCQ+HoIU4JKJwJ2bM9CwaYuGIUJpQBYpgHYXsYIi6pKF+U9rm2qF408iq8jqgWBFc8ZewlakX1P/bSD28df3d2ZM3pJcW0cW7k9+DD5uZSCkRWEEv26YOLvjwOIlaEZqA+3RBRXUDC4No3qjLwWWtNNLB9HERyJZqr79EF5XTJCDK2QtvFcrTRyWwFVsEdXL88BAnxtT5Iq1srXlXX0aaE2rr1JcwquvdTU9N7tUH/4svzoU9ff84W2I/rlSEAAAAASUVORK5CYII=">
+
+    
+<header class="navbar">
+    
+    <!-- Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand" 
+           href="https://rauancostadev.github.io/InfoTratamento/index.html"
+           rel="noopener noreferrer">
+            <img src="https://ligacontraocancer.com.br/wp-content/themes/v01/assets/img/build/liga-contra-o-cancer-footer-red.f7f3067c.png" 
+                 alt="Liga Contra o Câncer" 
+                 title="Liga Contra o Câncer">
+        </a>
+    </div>
+
+    <!-- Título central -->
+    <h1 class="titulo-central">Central de Marcação</h1>
+
+
+    <!-- Botão lateral -->
+<div class="side-menu-button" onclick="toggleSideMenu()">☰ Menu</div>
+
+<!-- Menu lateral -->
+<div id="side-menu" class="side-menu">
+    <a href="index.html">Início</a>
+    <a href="oncologia.html">Oncologia Clínica</a>
+    <a href="quimioterapia.html">Quimioterapia</a>
+    <a href="radioterapia.html">Radioterapia</a>
+    <a href="ultrassonografia.html">Ultrassonografia</a>
+    <a href="anotacoes.html">Respostas Rápidas</a>
+    <a href="telefonia.html">Telefonia</a>
+</div>
+    
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<header>
+<h1>Respostas Rápidas</h1>
+</header>
+
+<h3>Saudações</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('bomdia')">Bom Dia</button>
+—
+<button onclick="copiarTexto('boatarde')">Boa Tarde</button>
+—
+<button onclick="copiarTexto('boanoite')">Boa Noite</button>
+
+<h3>Informações</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('entradaregula')">Passo a Passo do Regula</button>
+—
+<button onclick="copiarTexto('preencherinfopaciente')">Preencher Informações do Paciente</button>
+<button onclick="copiarTexto('solicitacao')">Solicitação da Triagem</button>
+—
+<button onclick="copiarTexto('hematologiaunimed')">Hematologia Unimed</button>
+<button onclick="copiarTexto('hematonaoautorizado')">Hematologia Não Autorizada</button>
+—
+<button onclick="copiarTexto('solicitarpendencia')">Solicitar Pendência</button>
+
+<h3>Contatos</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('contatosecretariasus')">Secretária SUS</button>
+<button onclick="copiarTexto('contatosecretariaconv')">Secretária Convênio</button>
+<button onclick="copiarTexto('secretariaradio')">Secretária Radio</button>
+<button onclick="copiarTexto('secretariatelefonia')">Secretária pela Telefonia</button>
+—
+<button onclick="copiarTexto('contatoquimioterapiasus')">Contato Quimioterapia SUS</button>
+<button onclick="copiarTexto('contatoquimioterapiaconvenio')">Contato Quimioterapia Convênio</button>
+—
+<button onclick="copiarTexto('contatopediatria')">Contato Pediatria</button>
+—
+<button onclick="copiarTexto('contatocentraldemarcaçao')">Contato Central de Marcação</button>
+—
+<button onclick="copiarTexto('semvagaradio')">Radioterapia Sem Vagas</button>
+
+<h3>Valores de Consultas</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('consultahematologia')">Valor Consulta Hematologia</button>
+—
+<button onclick="copiarTexto('consultaoncologia')">Valor Consulta Oncologia</button>
+—
+<button onclick="copiarTexto('consultaradio')">Valor Consulta Radioterapia</button>
+—
+<button onclick="copiarTexto('consultaoncogenetica')">Valor Consulta Oncogenetica</button>
+
+<h3>Informações 1ª Vez</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('hematoconvenio')">Hematologia Convênio</button>
+<button onclick="copiarTexto('hematosus')">Hematologia SUS</button>
+<button onclick="copiarTexto('hematoparticular')">Hematologia Particular</button>
+—
+<button onclick="copiarTexto('oncoconvenio')">Oncologia Convênio</button>
+<button onclick="copiarTexto('oncosus')">Oncologia SUS</button>
+<button onclick="copiarTexto('oncoparticular')">Oncologia Particular</button>
+—
+<button onclick="copiarTexto('radioconvenio')">Radioterapia Convênio</button>
+<button onclick="copiarTexto('radiosus')">Radioterapia SUS</button>
+<button onclick="copiarTexto('radioparticular')">Radioterapia Particular</button>
+
+<h3>Preparos das Consultas</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('consultasustratamento')">Consulta SUS - Tratamento</button>
+<button onclick="copiarTexto('consultasusinterior')">Consulta SUS - Interior</button>
+<button onclick="copiarTexto('consultasusnatal')">Consulta SUS - Natal</button>
+—
+<button onclick="copiarTexto('consultaparticular')">Consulta Particular</button>
+—
+<button onclick="copiarTexto('consultaconvenio')">Consulta Convênio</button>
+
+<h3>Finalizar atendimento</h3>
+<div class="botoes-container">
+<button onclick="copiarTexto('agendamentofeito')">Agendamento Realizado</button>
+—
+<button onclick="copiarTexto('finalizandoexpediente')">Finalizando Expediente</button>
+—
+<button onclick="copiarTexto('agradecimentonasemana')">Agradecer na Semana</button>
+<button onclick="copiarTexto('agradecimentofinaldesemana')">Agradecer Final de Semana</button>
+
+
+</div>
+
+<script>
+function copiarTexto(tipo) {
+
+  let textos = {
+    bomdia: `Bom dia!
+Me chamo Rauan, atendente nas especialidades de Oncologia Clínica e Hematologia pela unidade de Natal.
+
+Para iniciarmos, me informe seu nome e se a consulta seria por convênio, particular ou pelo SUS?`,
+
+    boatarde: `Boa tarde!
+Me chamo Rauan, atendente nas especialidades de Oncologia Clínica e Hematologia pela unidade de Natal.
+
+Para iniciarmos, me informe seu nome e se a consulta seria por convênio, particular ou pelo SUS?`,
+
+    boanoite: `Boa noite!
+Me chamo Rauan, atendente nas especialidades de Oncologia Clínica e Hematologia pela unidade de Natal.
+
+Para iniciarmos, me informe seu nome e se a consulta seria por convênio, particular ou pelo SUS?`,
+
+    solicitacao: `Muito obrigado! Segue abaixo as orientações:
+
+*As informações foram encaminhadas ao setor responsável para ser realizada a triagem.* ✅
+
+- Favor aguardar a análise do médico.
+- Após a análise, retornaremos o contato sobre a liberação da consulta.
+
+Obs: Caso ultrapasse o prazo de 72h úteis e não tivermos mantido contato com o paciente, favor nos contate imediatamente.
+
+Saiba que temos um número exclusivo para falar com nossos pacientes, caso receba uma ligação no número 3113-3400, NÃO DESLIGUE, é a LIGA CONTRA O CANCER tentando falar com você. 🤗`,
+
+    agendamentofeito: `*Confirmado o agendamento* ✅
+
+Teria dúvidas ou posso lhe ajudar em algo mais? 😊`,
+
+    agradecimentonasemana: `Meus agradecimentos e lhe desejo uma ótima e abençoada semana! 🙏`,
+
+    agradecimentofinaldesemana: `Meus agradecimentos e lhe desejo um ótimo e abençoado final de semana! 🙏`,
+
+    agendamentofeito: `*Confirmado o agendamento* ✅
+
+Teria dúvidas ou posso lhe ajudar em algo mais? 😊`,
+
+    preencherinfopaciente: `*Favor preencher as seguintes informações:*
+ 
+- *Nome completo:* 
+- *CPF:* 
+- *Data de nascimento:* 
+- *Número de telefone:* 
+
+- *Foi sugerido algum médico?*`,
+
+    contatosecretariaconv: `Vitória ou Jéssica
+*(84) 99413-9912* - Secretária da Oncologia/Hematologia Convênio (WhatsApp)
+
+Segunda à sexta
+*Horário de atendimento:* 07:00 às 17:00`,
+
+    contatosecretariasus: `*(84) 4009-5573* - Secretária da Oncologia/Hematologia SUS (Apenas via Ligação)
+
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+    contatoquimioterapiasus: `*(84) 4009-5583* - Quimioterapia SUS (Apenas via WhatsApp)
+
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+    contatoquimioterapiaconvenio: `*(84) 98843-3323* - Quimioterapia Convênio (Apenas via WhatsApp)
+
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+    hematonaoautorizado: `O motivo do meu contato é a respeito da solicitação da triagem, os exames foram apresentados aos médicos hematologista e a consulta não foi liberada.
+
+Por sermos um hospital voltado ao diagnóstico de neoplasias malignas, a triagem realizada não identificou achados sugestivos de malignidade.
+
+Contamos com a sua compreensão e qualquer dúvida, pode retornar o contato conosco, estamos à disposição.`,
+
+    solicitarpendencia: `ENCAIXE
+
+NOME: 
+CPF: 
+CTT: 
+
+Motivo: `,
+
+    contatopediatria: `Atendimento do setor pediátrico via WhatsApp:
+*(84) 4009-5501*
+Selecionar a opção 5 - Hospital Pediatria
+
+Ou via ligação, através do número:
+*(84) 4009-5688* - Pediatria
+
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+    contatocentraldemarcaçao: `Atendimento via WhatsApp: 
+*(84) 4009-5601*
+Preencher as informaçoes e ao solicitar a especialidade escrever "Cirurgião Oncológico"
+
+Ou via ligação, através do número:
+*(84) 4009-5600* - Central de Marcação
+
+Segunda à sexta
+*Horário de atendimento:* 07:00 às 18:00`,
+
+    entradaregula: `*Segue o passo a passo para dar entrada na autorização:*
+
+1° Passo: Se dirigir na secretaria de saúde do município, portando o documento pessoal com foto e CPF.
+2° Passo: Solicitando inserir a consulta, informando a especialidade, nome do médico e os dados do paciente.
+3° Passo: Aguardar 20 dias. Após o prazo, retorne o contato conosco para liberarmos a autorização.
+
+Caso a secretaria de saúde tenha dúvidas, favor, manter contato diretamente com a Sesap/RN e serão orientados.`,
+
+    secretariatelefonia: `*Setor de Telefonia:*
+Entrar em contato via ligação através do número *(84) 4009-5501*, selecionar a *opção 9* para falar com o setor de *telefonia* e em seguida, solicitar falar com a secretária
+ 
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+    finalizandoexpediente: `Estamos finalizando as nossas operações de atendimento e contamos com sua compreensão.
+    
+Favor nos contatar amanhã para darmos continuidade ao atendimento. Tenha uma ótima noite!`,
+
+    secretariaradio: `*(84) 4009-5575* - Secretária Radioterapia (Apenas via Ligação)
+*(84) 4009-7433* - Secretária Radioterapia (Apenas via Ligação)
+
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+   consultasustratamento: `*ATENÇÃO:* Paciente deverá chegar 30 minutos antes para registrar o atendimento e receber as informações necessárias para realização deste procedimento.
+   
+*Paciente deverá trazer no dia da consulta:*  
+- Documentos pessoais, comprovante de residência em seu nome, cartão do SUS atualizado do município em que reside, encaminhamento/ficha de referência e exames anteriores, caso tenha.
+
+*Observação:* Não precisa solicitar a autorização para esta consulta, pois o paciente segue em tratamento.`,
+
+    consultasusnatal: `*ATENÇÃO:* Paciente deverá chegar 30 minutos antes para registrar o atendimento e receber as informações necessárias para realização deste procedimento.
+    
+*Paciente deverá trazer no dia da consulta:*  
+- Documentos pessoais, comprovante de residência em seu nome, cartão do SUS atualizado do município de Natal, encaminhamento/ficha de referência e exames anteriores, caso tenha.`,
+
+    consultasusinterior: `*ATENÇÃO:* Paciente deverá chegar 30 minutos antes para registrar o atendimento e receber as informações necessárias para realização deste procedimento.
+
+*Paciente deverá trazer no dia da consulta:*  
+- Documentos pessoais, comprovante de residência em seu nome, cartão do SUS atualizado do município em que reside, encaminhamento/ficha de referência e exames anteriores, caso tenha.`,
+
+    consultaconvenio: `*ATENÇÃO:* Paciente deverá chegar 30 minutos antes para registrar o atendimento e receber as informações necessárias para realização deste procedimento.
+    
+*Paciente deverá trazer no dia da consulta:*  
+- Documentos pessoais e exames anteriores para mostrar (caso tenha);
+- Carteira do Convênio.
+
+*Observação:* Não esquecer de agendar o seu retorno após a consulta.`,
+
+    consultaparticular: `*ATENÇÃO:* Paciente deverá chegar 30 minutos antes para registrar o atendimento e receber as informações necessárias para realização deste procedimento.
+    
+*Paciente deverá trazer no dia da consulta:*  
+- Documentos pessoais e exames anteriores para mostrar (caso tenha);
+
+*Observação:* Não esquecer de agendar o seu retorno após a consulta.`,
+
+    consultaoncologia: `A consulta oncologista clínico tem o valor de R$ 450,00, pode parcelar em ate 6 vezes, sem juros no cartão de crédito, com direito a um retorno de ate 30 dias`,
+
+    consultahematologia: `A consulta hematologista tem o valor de R$ 450,00, pode parcelar em ate 6 vezes, sem juros no cartão de crédito, com direito a um retorno de ate 45 dias`,
+
+    consultaradio: `A consulta radioterapeuta tem o valor de R$ 250,00, pode parcelar em ate 4 vezes, sem juros no cartão de crédito, com direito a um retorno de ate 30 dias`,
+
+    consultaoncogenetica: `A consulta oncogeneticista tem o valor de R$ 500,00, pode parcelar em ate 6 vezes, sem juros no cartão de crédito, com direito a um retorno de ate 30 dias`,
+      
+    hematologiaunimed: `*Hematologia para adultos, convênio Unimed:*
+Não atende gestantes;
+É priorizado os pacientes oncológicos.
+
+Para passar pela triagem, se faz necessário nos enviar via WhatsApp:
+*Resultado do hemograma e o encaminhamento médico, caso tenha.*
+
+Encaminharemos a solicitação da triagem, a médica avaliará e retornaremos o contato para informar sobre a liberação da consulta.`,
+
+    semvagaradio: `Estamos sem vagas disponíveis, os agendamentos foram disponibilizados até o mês de agosto, porém todas as vagas já foram preenchidas.
+
+Em casos de urgências ou mostrar exames, poderá vir presencialmente na unidade do CECAN ou manter contato *via WhatsApp* com a secretária da radioterapia, através do número *(84) 4009-5581.*
+
+Segunda à sexta
+*Horário de atendimento:* 08:00 às 16:00`,
+
+    hematoconvenio: `Atendimentos por convênio com a hematologia, se faz necessário passar por uma triagem. Favor nos enviar por este canal de WhatsApp o resultado do *hemograma* ou *biópsia* e, caso tenha, o *encaminhamento médico*. Após a análise dos médicos, a consulta poderá ser liberada.`,
+    hematosus: `Atendimentos pelo SUS com a hematologia, se faz necessário passar por uma triagem. Favor nos enviar por este canal de WhatsApp o resultado da *biópsia* ou *hemograma* e, caso tenha, o *encaminhamento médico*. Após a análise dos médicos, a consulta poderá ser liberada.`,
+    hematoparticular: `A consulta hematologista tem o valor de R$ 450,00, pode parcelar em ate 6 vezes e o paciente tem direito ao retorno de ate 45 dias`,
+      
+    oncoconvenio: `Atendimentos por convênio com a oncologia clínica, se faz necessário passar por uma triagem. Favor nos enviar por este canal de WhatsApp o resultado dos *exames de imagem* ou *biópsia* e, caso tenha, o *encaminhamento médico*. Após a análise dos médicos, a consulta poderá ser liberada.`,
+    oncosus: `Atendimentos pelo SUS com a oncologia clínica, se faz necessário passar por uma triagem. Favor nos enviar por este canal de WhatsApp o resultado da *biópsia* e, caso tenha, o *encaminhamento médico*. Após a análise dos médicos, a consulta poderá ser liberada.`,
+    oncoparticular: `Atendimentos via particular com a oncologia clínica, se faz necessário passar por uma triagem. Favor nos enviar por este canal de WhatsApp o resultado dos *exames de imagem* ou *biópsia* e, caso tenha, o *encaminhamento médico*. Após a análise dos médicos, a consulta poderá ser liberada.`,
+      
+    radioconvenio: `Atendimentos por convênio com a radioterapia, se faz necessário nos enviar via WhatsApp o resultado da *biópsia* e *encaminhamento médico* para passar pela triagem. Após a análise dos médicos, a consulta poderá ser liberada.`,
+    radiosus: `Atendimentos pelo SUS com a radioterapia, se faz necessário nos enviar via WhatsApp o resultado da *biópsia* e *encaminhamento médico* para passar pela triagem. Após a análise dos médicos, a consulta poderá ser liberada.`,
+    radioparticular: `Solicitar no grupo de 1° vez da radioterapia, portando apenas o *encaminhamento médico*.`
+  };
+
+  if(!textos[tipo]){
+
+Swal.fire({
+icon:"error",
+title:"Texto não encontrado"
+});
+
+return;
+
+}
+
+navigator.clipboard.writeText(textos[tipo])
+
+.then(()=>{
+
+Swal.fire({
+toast:true,
+position:'top-middle',
+icon:'success',
+title:'Texto copiado!',
+showConfirmButton:false,
+timer:2000
+});
+
+})
+
+.catch(()=>{
+
+Swal.fire({
+icon:'error',
+title:'Erro ao copiar'
+});
+
+});
+
+}
+</script>
+
+<script>
+function toggleSideMenu() {
+    const menu = document.getElementById('side-menu');
+    if(menu.style.right === "0px") {
+        menu.style.right = "-250px"; // fecha
+    } else {
+        menu.style.right = "0px"; // abre
+    }
+}
+</script>
+
+<footer>
+    Liga Contra o Cancer • Central de Marcação
+</footer>    
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

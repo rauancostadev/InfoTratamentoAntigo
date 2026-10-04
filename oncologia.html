@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Marcação</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEzfbFPaW1TZW1DbYk7aXVDYVlDWTVLXVFDYVlDaYUzaXlDdaE7idVjhclbgb1Tgb1Xic1fkeFyJbEO4AAAAEnRSTlMAHDlOZ4bL/+f//6f/0+7/sseHLxJ+AAAA70lEQVR4AWXPR4IEIQwEQakb7+H/j91CMFqXcAss/Yqf17wPk6Zgnb8F85tMiNFHr/z8oPhJWdWlmISCQ+HoIU4JKJwJ2bM9CwaYuGIUJpQBYpgHYXsYIi6pKF+U9rm2qF408iq8jqgWBFc8ZewlakX1P/bSD28df3d2ZM3pJcW0cW7k9+DD5uZSCkRWEEv26YOLvjwOIlaEZqA+3RBRXUDC4No3qjLwWWtNNLB9HERyJZqr79EF5XTJCDK2QtvFcrTRyWwFVsEdXL88BAnxtT5Iq1srXlXX0aaE2rr1JcwquvdTU9N7tUH/4svzoU9ff84W2I/rlSEAAAAASUVORK5CYII=">
+</head>
+
+<body>
+
+<!-- Cabeçalho / Navbar -->
+<header class="navbar">
+    <div class="navbar-header">
+        <a class="navbar-brand" 
+           href="https://rauancostadev.github.io/InfoTratamento/index.html"
+           rel="noopener noreferrer">
+            <img src="https://ligacontraocancer.com.br/wp-content/themes/v01/assets/img/build/liga-contra-o-cancer-footer-red.f7f3067c.png" 
+                 alt="Liga Contra o Câncer" 
+                 title="Liga Contra o Câncer">
+        </a>
+    </div>
+    <h1 class="titulo-central">Central de Marcação</h1>
+    <div class="side-menu-button" onclick="toggleSideMenu()">☰ Menu</div>
+    <div id="side-menu" class="side-menu">
+    <a href="index.html">Início</a>
+    <a href="oncologia.html">Oncologia Clínica</a>
+    <a href="quimioterapia.html">Quimioterapia</a>
+    <a href="radioterapia.html">Radioterapia</a>
+    <a href="ultrassonografia.html">Ultrassonografia</a>
+    <a href="anotacoes.html">Respostas Rápidas</a>
+    <a href="telefonia.html">Telefonia</a>
+</div>
+
+</header>
+
+<header>
+    <h1>Oncologia Clínica</h1>
+</header>
+
+<section class="container">
+
+<div class="search-wrapper">
+    <input type="text" id="search" class="search" placeholder="Buscar médico...">
+</div>
+
+<div class="container" id="mainPage">
+    <div class="grid" id="tumorGrid"></div>
+</div>
+
+<div class="container hidden" id="doctorPage">
+    <div class="profile">
+        <button class="back" onclick="goHome()">← Voltar</button>
+        <h2 id="doctorName"></h2>
+        <p><b>Áreas de atuação:</b></p>
+        <div id="doctorAreas"></div>
+    </div>
+</div>
+
+<h2>Rede de Especialistas</h2>
+<div id="network" style="height:500px;border:1px solid #ddd;border-radius:10px;margin-bottom:20px;"></div>
+
+<footer>
+    Liga Contra o Cancer • Central de Marcação
+</footer>   
+
+<!-- Biblioteca Vis.js -->
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<script>
+const data = {
+"Mama":["Wendel Ferreira","Monalisa Ceciliana","Luciana Aquino","Carolina de Lima","Joilda Batista","Cristina Rocha","Ana Rafaela","Carolina Filgueira","Renanna Lyra","Laura Porto","Ayala Kaline","Marcele Aurea","Eliane Melo"],
+"Primário Oculto":["Eliane Melo","Luciana Aquino","Rodrigo Jeronimo","Érika Ximenes"],
+"TGI/Gastrointestinal":["Ana Rafaela","Ayala Kaline","Isafran Emanuele","Pedro Victor","Laura Porto","Pierre Gois","Moises"],
+"Urológico":["Silvio Sales","Andrea Juliana","Rodrigo Jeronimo","Érika Ximenes","Carolina Filgueira","Isafran Emanuele","Carolina de Lima","Monalisa Ceciliana"],
+"Melanoma/Pele":["Cristina Rocha","Alison Wagner","Pedro Victor","Eliane Melo","Ana Rafaela","Moises"],
+"Colorretal":["Laura Porto","Pierre Gois","Silvio Sales","Marcele Aurea","Wendel Ferreira","Isafran Emanuele","Ayala Kaline","Sulene Cunha"],
+"Cérebro":["Alison Wagner","Eliane Melo","Moises","Renanna Lyra"],
+"Sarcoma":["Alison Wagner","Pierre Gois","Renanna Lyra"],
+"Pulmão/Timo":["Wendel Ferreira","Sulene Cunha","Pedro Victor","Pierre Gois","Moises"],
+"Cabeça e Pescoço":["Silvio Sales","Andrea Juliana","Carolina de Lima","Érika Ximenes"],
+"Ginecológico":["Monalisa Ceciliana","Sulene Cunha","Luciana Aquino","Andrea Juliana","Carolina de Lima","Ayala Kaline","Carolina Filgueira","Marcele Aurea","Renanna Lyra"]
+};
+
+const grid = document.getElementById("tumorGrid");
+
+function renderTumors(){
+    grid.innerHTML="";
+    Object.entries(data).forEach(([tumor,doctors])=>{
+        const card=document.createElement("div");
+        card.className="card";
+        const title=document.createElement("h2");
+        title.textContent=tumor;
+        const count=document.createElement("div");
+        count.className="count";
+        count.textContent=doctors.length+" médicos";
+        const ul=document.createElement("ul");
+        doctors.sort((a,b)=>a.localeCompare(b,"pt-BR")).forEach(doc=>{
+            const li=document.createElement("li");
+            li.innerHTML="👨‍⚕️ "+doc;
+            li.onclick=()=>openDoctor(doc);
+            ul.appendChild(li);
+        });
+        card.appendChild(title);
+        card.appendChild(count);
+        card.appendChild(ul);
+        grid.appendChild(card);
+    });
+}
+
+function openDoctor(name){
+    document.getElementById("mainPage").classList.add("hidden");
+    document.getElementById("doctorPage").classList.remove("hidden");
+    document.getElementById("doctorName").textContent=name;
+    const areasDiv=document.getElementById("doctorAreas");
+    areasDiv.innerHTML="";
+    Object.entries(data).forEach(([tumor,doctors])=>{
+        if(doctors.includes(name)){
+            const badge=document.createElement("span");
+            badge.className="badge1";
+            badge.textContent=tumor;
+            areasDiv.appendChild(badge);
+        }
+    });
+}
+
+function goHome(){
+    document.getElementById("doctorPage").classList.add("hidden");
+    document.getElementById("mainPage").classList.remove("hidden");
+}
+
+document.getElementById("search").addEventListener("input",e=>{
+    const value=e.target.value.toLowerCase();
+    document.querySelectorAll(".card li").forEach(li=>{
+        const name=li.textContent.toLowerCase();
+        li.style.display=name.includes(value)?"block":"none";
+    });
+});
+
+renderTumors();
+
+// --- Vis.js avançado ---
+function renderNetwork(){
+    const nodes = [];
+    const edges = [];
+    const doctorSet = new Set();
+    const tumorSet = new Set();
+    Object.entries(data).forEach(([tumor, doctors])=>{
+        tumorSet.add(tumor);
+        doctors.forEach(doc=>doctorSet.add(doc));
+    });
+    tumorSet.forEach(t=>nodes.push({id:t,label:t,group:"tumor",shape:"box", color:{border:"#FF9800", background:"#FFECB3"}}));
+    doctorSet.forEach(d=>nodes.push({id:d,label:d,group:"doctor",shape:"dot",size:15, color:{border:"#4CAF50", background:"#C8E6C9"}}));
+    Object.entries(data).forEach(([tumor, doctors])=>{
+        doctors.forEach(doc=>edges.push({from:doc, to:tumor}));
+    });
+
+    const container = document.getElementById("network");
+    const network = new vis.Network(container, {
+        nodes: new vis.DataSet(nodes),
+        edges: new vis.DataSet(edges)
+    },{
+        physics: {stabilization: false},
+        groups: {doctor:{color:{border:"#4CAF50", background:"#C8E6C9"}}, tumor:{color:{border:"#FF9800", background:"#FFECB3"}}}
+    });
+
+    function resetCardsAndNodes(){
+        document.querySelectorAll(".card").forEach(card=>card.style.display="block");
+        document.querySelectorAll(".card li").forEach(li=>li.style.display="block");
+        network.body.data.nodes.update(
+            nodes.map(n => {
+                if(n.group==="doctor") return {...n, color:{border:"#4CAF50", background:"#C8E6C9"}};
+                else return {...n, color:{border:"#FF9800", background:"#FFECB3"}};
+            })
+        );
+    }
+
+    network.on("click", params=>{
+        resetCardsAndNodes();
+        if(params.nodes.length===0) return;
+
+        const nodeId = params.nodes[0];
+        const node = nodes.find(n => n.id===nodeId);
+
+        if(node.group==="tumor"){
+            document.querySelectorAll(".card").forEach(card=>{
+                card.style.display = card.querySelector("h2").textContent === nodeId ? "block" : "none";
+            });
+            const doctors = data[nodeId];
+            network.body.data.nodes.update(
+                nodes.map(n => {
+                    if(n.group==="doctor" && doctors.includes(n.id)){
+                        return {...n, color:{border:"#FF5722", background:"#FFCCBC"}};
+                    }
+                    else if(n.group==="tumor" && n.id===nodeId){
+                        return {...n, color:{border:"#FF9800", background:"#FFE082"}};
+                    }
+                    return n;
+                })
+            );
+        }
+
+        if(node.group==="doctor"){
+            document.querySelectorAll(".card").forEach(card=>{
+                card.querySelectorAll("li").forEach(li=>{
+                    li.style.display = li.textContent.includes(nodeId) ? "block" : "none";
+                });
+            });
+            const tumors = Object.entries(data).filter(([t,dlist])=>dlist.includes(nodeId)).map(([t])=>t);
+            network.body.data.nodes.update(
+                nodes.map(n=>{
+                    if(n.group==="tumor" && tumors.includes(n.id)){
+                        return {...n, color:{border:"#4CAF50", background:"#C8E6C9"}};
+                    }
+                    else if(n.group==="doctor" && n.id===nodeId){
+                        return {...n, color:{border:"#FF5722", background:"#FFCCBC"}};
+                    }
+                    return n;
+                })
+            );
+        }
+    });
+}
+
+// Inicializar grafo
+renderNetwork();
+
+</script>
+
+<script>
+function toggleSideMenu() {
+    const menu = document.getElementById('side-menu');
+    if(menu.style.right === "0px") {
+        menu.style.right = "-250px";
+    } else {
+        menu.style.right = "0px";
+    }
+}
+</script>
+
+</body>
+</html>
